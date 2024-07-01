@@ -1,16 +1,12 @@
-const path = require('path')
-
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-
-const config = require('./webpack.config')
-const { merge } = require('webpack-merge')
+import path from 'path'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import config from './webpack.config'
+import { merge } from 'webpack-merge'
 
 module.exports = merge(config, {
-  mode: 'production',
-  output: {
-    path: path.join(__dirname, 'public')
-  },
-  plugins: [
-    new CleanWebpackPlugin()
-  ]
+    mode: 'production',
+    output: {
+        path: path.join(__dirname, 'public'),
+    },
+    plugins: [new CleanWebpackPlugin()],
 })
